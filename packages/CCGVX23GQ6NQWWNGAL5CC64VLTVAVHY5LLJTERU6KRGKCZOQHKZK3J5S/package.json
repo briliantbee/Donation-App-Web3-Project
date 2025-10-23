@@ -1,0 +1,17 @@
+{
+  "version": "0.0.0",
+  "name": "CCGVX23GQ6NQWWNGAL5CC64VLTVAVHY5LLJTERU6KRGKCZOQHKZK3J5S",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^14.1.1",
+    "buffer": "6.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
