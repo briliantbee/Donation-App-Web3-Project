@@ -85,3 +85,4 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 ---
 
 Built with ❤️ using React Router.
+>>>>>>> cb142dacdad696b166d77ff774b6e6a2b42de6db
