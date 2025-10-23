@@ -1,119 +1,154 @@
-🚀 Project Name
-Zakat Web3: Simple Donation App on Stellar
+# Zakat Web3 — Simple Donation App on Stellar
 
-👤 About Me
-Name: Abisam Hazim
-Role: Web3 Developer
-Skills: Blockchain Development, Soroban/Stellar Smart Contracts, Rust, React, TypeScript
-Goal: To simplify charitable donations and zakat distribution using blockchain technology for transparency and trust.
-Motto: “Donate easily, transparently, and securely.”
+Zakat Web3 is a lightweight donation application built on Stellar (Soroban) that makes charitable donations and zakat collection transparent, auditable, and easy to use. Admins can create campaigns and users can donate XLM; every donation is recorded on-chain and withdrawable by the campaign recipient once conditions are met.
 
-📘 Project Description
-Zakat Web3 is a Stellar-based donation application that allows admins to create donation campaigns and users to donate XLM to those campaigns. Each campaign tracks the current collected amount, target amount, and donor contributions. The system ensures transparency by recording all donations on-chain, while the admin or campaign recipient can withdraw funds once the campaign reaches completion.
+---
 
-🌍 Vision
-The vision of Zakat Web3 is to make giving and zakat collection transparent, secure, and accessible for everyone. By leveraging Stellar blockchain, it ensures that every donation is verifiable and tamper-proof, building trust between donors and recipients.
+## 🚀 Summary
+- Name: Zakat Web3
+- Author: Abisam Hazim
+- Role: Web3 Developer
+- Skills: Blockchain (Soroban / Stellar), Rust, React, TypeScript
+- Motto: “Donate easily, transparently, and securely.”
 
-🧩 Software Development Plan
+---
 
-Smart Contract (Soroban / Stellar)
+## 🌍 Vision
+Make giving and collecting zakat transparent, secure, and accessible to everyone using blockchain technology. Leveraging Stellar ensures every donation is verifiable and tamper-resistant.
 
-Structs: Campaign, Donation
+---
 
-Enums: CampaignStatus (Active, Completed, Closed)
+## 🧩 Key Features
+- Web3 wallet integration (Freighter / Albedo)
+- Admins can create campaigns
+- Users can donate XLM directly to campaigns
+- All donations are recorded on-chain (Stellar)
+- Campaign progress display (collected vs target)
+- Donations can be withdrawn only after campaign completion
+- Optional: backend caching for a more responsive UI and analytics
 
-Storage: Campaigns and Donations maps
+---
 
-Functions:
+## 🏗️ Architecture & Development Plan
 
-initialize() → Initialize contract with campaign counter
+### Smart Contract (Soroban / Stellar)
+Structs:
+- Campaign
+- Donation
 
-create_campaign(title, description, category, target_amount, recipient) → Create new campaign
+Enums:
+- CampaignStatus: Active, Completed, Closed
 
-get_campaigns() → Get all campaigns
+Storage:
+- mapping Campaigns
+- mapping Donations
 
-get_campaign(id) → Get specific campaign
-
-donate(id, donor, amount) → Donate to a campaign
-
-get_donations(id) → Get donations for a campaign
-
-close_campaign(id, caller) → Close campaign
-
-withdraw(id, caller) → Withdraw funds after completion
-
-Frontend Development (React + Vite)
-
-Connect Web3 wallets (Freighter or Albedo)
-
-Display campaigns, campaign details, and donation history
-
-Simple UI to donate XLM and track progress
-
-Backend/Database (Optional)
-
-For caching campaigns/donations for faster UI rendering
-
-Optional analytics and reporting
-
-Testing & Debugging
-
-Test contract and frontend on Stellar Testnet
-
-Ensure secure withdrawal and donation handling
-
-Deployment
-
-Deploy contract via Soroban CLI
-
-Host frontend on Vercel or Netlify
-
-💻 Installation & Setup
-
-Clone repository
-
-git clone https://github.com/yourusername/zakat-web3.git
-cd zakat-web3
+API / Functions:
+- initialize() — Initialize contract (campaign counter)
+- create_campaign(title, description, category, target_amount, recipient) — Create a new campaign
+- get_campaigns() — Fetch all campaigns
+- get_campaign(id) — Fetch a specific campaign
+- donate(id, donor, amount) — Donate to a campaign
+- get_donations(id) — Campaign donation history
 
 
-Install dependencies
+Testing:
+- Test the contract on Stellar Testnet
+- Test edge cases (double withdraw, underflow, unauthorized calls)
 
-npm install
+Deployment:
+- Build & deploy the contract via Soroban CLI to testnet/mainnet as needed
 
+### Frontend (React + Vite)
+- Connect wallets (Freighter / Albedo)
+- Campaign listing page
+- Campaign detail page with donation history
+- Simple donate component (amount input, confirm)
+- Progress bar and campaign status display
 
-Create .env file
+### Backend (Optional)
+- Cache campaigns/donations for performance
+- Analytics / reporting endpoints (optional)
 
-Add your RPC URL and contract ID
+---
 
-Run development server
+## 💻 Quick Start — Installation & Setup
 
-npm run dev
+1. Clone the repo
+   ```bash
+   git clone https://github.com/yourusername/zakat-web3.git
+   cd zakat-web3
+   ```
 
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-Open in browser: http://localhost:5173
+3. Create a `.env` file
+   Example variables (adjust to your project):
+   ```
+   VITE_RPC_URL=https://soroban-rpc.testnet.stellar.org
+   VITE_CONTRACT_ID=YOUR_CONTRACT_ID_HERE
+   ```
 
-🐐 Project Mascot
+4. Run the development server
+   ```bash
+   npm run dev
+   ```
 
-Mascot: Giving Goat 🐐
+5. Open in your browser:
+   ```
+   http://localhost:5173
+   ```
 
-Setting: Simple digital village
+Build for production:
+```bash
+npm run build
+npm run preview
+```
 
-Theme Keywords: Charity, Transparency, Community
+---
 
-🏆 App Features
+## 🧪 Testing & Debugging
+- Use Stellar Testnet for testing donations and withdrawals.
+- Write unit tests for the smart contract (Rust/Soroban) and integration tests between frontend and wallet.
+- Validate donation amounts on the client and enforce authorization checks for withdrawals.
 
-Web3 Wallet Integration (Freighter/Albedo)
+---
 
-Admin can create campaigns
+## 📦 Deployment
+- Deploy the smart contract via Soroban CLI (follow the official Soroban docs).
+- Host the frontend on Vercel, Netlify, or any static hosting provider.
+- Ensure environment variables (RPC URL, contract ID) are set in your hosting environment.
 
-Users can donate XLM
+---
 
-Track donations on-chain
+## 🤝 Contributing
+Contributions are welcome! To contribute:
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feat/your-feature`
+3. Commit and open a PR
+4. Add a description of changes and how to test them
 
-Transparent and verifiable campaign progress
+---
 
-Withdraw funds only after campaign completion
+## 🐐 Mascot
+- Giving Goat 🐐  
+- Setting: Simple digital village  
+- Theme: Charity, Transparency, Community
 
-📫 Contact
-Developer: Abisam Hazim
-Project Link: zakat-web3.vercel.app
+---
+
+## 📫 Contact
+- Developer: Abisam Hazim  
+- Project demo: https://zakat-web3.vercel.app
+
+---
+
+## License
+Choose a license for the project (e.g., MIT) and add a LICENSE file.
+
+---
+
+Thank you for contributing — may Zakat Web3 help make donation processes more transparent and trustworthy.
