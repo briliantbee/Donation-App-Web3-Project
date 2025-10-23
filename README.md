@@ -85,19 +85,13 @@ Deployment:
    npm install
    ```
 
-3. Create a `.env` file
-   Example variables (adjust to your project):
-   ```
-   VITE_RPC_URL=https://soroban-rpc.testnet.stellar.org
-   VITE_CONTRACT_ID=YOUR_CONTRACT_ID_HERE
-   ```
 
-4. Run the development server
+3. Run the development server
    ```bash
    npm run dev
    ```
 
-5. Open in your browser:
+4. Open in your browser:
    ```
    http://localhost:5173
    ```
